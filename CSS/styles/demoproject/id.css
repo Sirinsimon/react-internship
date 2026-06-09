@@ -1,0 +1,81 @@
+.id-card {
+    width: 320px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #edd7d7 0%, #e9f3ff 100%);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1f3c72;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+
+
+.college-name {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.photo-frame {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.photo-placeholder {
+    width: 180px;
+    height: 220px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #f7fbff 0%, #dbe9ff 100%);
+    border: 4px solid #ffffff;
+    box-shadow: 0 16px 30px rgba(31, 60, 114, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3367a6;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.card-footer {
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 18px;
+    padding: 14px 16px;
+    box-shadow: inset 0 0 0 1px rgba(31, 60, 114, 0.08);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(31, 60, 114, 0.12);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: 700;
+    color: #0d254f;
+}
+
+.value {
+    color: #344b71;
+    font-weight: 600;
+}
+
+body {
+    background: #d8e8ff;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
