@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: brown;
+            height: 500px;
+            width:800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .green{
+            background-color: green;
+            height: 200px;
+            width:200px;
+
+        }
+        @media(min-width:200px) and (max-width:620px){
+            .red{
+            background-color: green;
+            }
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="red">
+        <div class="green "onclick="alert('hello')">
+
+        </div>
+        
+    </div>
+    <script>
+        function alert(){
+            console.log("hello");
+            
+        }
+    </script>
+</body>
+</html>
