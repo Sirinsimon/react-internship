@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            width: 5rem;
+            height: 3rem;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="head" style="font-size: 10rem; margin: 0px;">0</h1>
+    <div>
+        <button onclick="add()">+</button>
+        <button onclick="sub()">-</button>
+        <button onclick="reset()">reset</button>
+    </div>
+    <h1 id="msg"></h1>
+    </body>
+<script>
+    let heading = document.getElementById("head");
+    let i = 0
+
+    setTimeout(() => {
+        document.getElementById("msg").innerHTML = "Do something!" 
+    }, 10000);
+
+    function add(){
+        heading.innerHTML = ++i
+        heading.style.color = "red"
+    }
+    function sub(){
+        heading.innerHTML = --i
+        heading.style.color = "green"
+    }
+    function reset(){
+        i = 0
+        heading.innerHTML = i
+        heading.style.color = "blue"
+    }
+    console.log(heading);
+</script>
+</html>

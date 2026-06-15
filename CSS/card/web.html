@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margine: 0px;
+        }
+
+        body {
+            /* justify-content: center;
+            align-items: center; */
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            column-gap: 10px;
+            row-gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: clamp(36rem,75vh,60rem);
+            width: clamp(25rem, 35vw, 28rem);
+            border: 5px solid rgb(189, 255, 255);
+            border-radius: 3rem;
+            background-color: azure;
+            padding-top: 2rem;
+        }
+
+        .image {
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            width: 90%;
+            margin: 1rem;
+            border-radius: 2rem;
+            background-color: white;
+        }
+
+        .details {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 30px;
+            font-weight: bolder;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-weight: 300;
+            font-size: clamp(1.1rem,2vw,1.5rem);
+        }
+
+        .name {
+            font-weight: bolder;
+        }
+
+        .price {
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 1000;
+        }
+
+        .model {
+            color: rgba(78, 78, 78, 0.812);
+
+        }
+
+        button {
+            height: 5rem;
+            width: 12rem;
+            margin-top: 1rem;
+            border-radius: 1rem;
+            background-color: rgb(76, 130, 255);
+            color: white;
+            border: 5px solid rgb(156, 204, 255);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="image"><img
+                src="https://p3-ofp.static.pub//fes/cms/2026/01/12/crw72p6ai21xthq72r9jcwclssrifc422567.png?width=584&height=584"
+                alt=""></div>
+        <div class="details">
+            <div class="name">ThinkBook 16 Gen 9</div>
+            <div class="price">Price : 55,000$</div>
+            <div class="model">Intel i5 </div>
+            <div class="model">16gb ram </div>
+            <div class="model">512gb ssd</div>
+            <div class="button"><button>Buy Now</button></div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="image"><img
+                src="https://in.store.asus.com/media/catalog/product/0/2/02_fx507_6.jpg"
+                alt=""></div>
+        <div class="details">
+            <div class="name">ASUS TUF F15</div>
+            <div class="price">Price : 90,000$</div>
+            <div class="model">Intel i9 HX </div>
+            <div class="model">24gb ram </div>
+            <div class="model">1TB ssd</div>
+            <div class="button"><button>Buy Now</button></div>
+        </div>
+    </div>
+        <div class="container">
+        <div class="image"><img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_Zw7Vb_r6YAv-yZJ5IsfVdycfAcBpEF7xOQ&s"
+                alt=""></div>
+        <div class="details">
+            <div class="name">Hp pavilion</div>
+            <div class="price">Price : 40,000$</div>
+            <div class="model">Intel i7 HX </div>
+            <div class="model">16gb ram </div>
+            <div class="model">512gb ssd</div>
+            <div class="button"><button>Buy Now</button></div>
+        </div>
+    </div>
+        </div>
+        <div class="container">
+        <div class="image"><img
+                src="https://dellstatic.luroconnect.com/media/catalog/product/cache/74ae05ef3745aec30d7f5a287debd7f5/c/d/cda16250cto04rino-1.jpg"
+                alt=""></div>
+        <div class="details">
+            <div class="name">DELL HQ</div>
+            <div class="price">Price : 40,000$</div>
+            <div class="model">Intel i3 10gen </div>
+            <div class="model">8gb ram </div>
+            <div class="model">512gb ssd</div>
+            <div class="button"><button>Buy Now</button></div>
+        </div>
+    </div>
+</body>
+</html>
