@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change</title>
+    <style>
+        div{
+            height: 10rem;
+            width: 10rem;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        let box = document.getElementsByTagName("div");
+
+        box[0].addEventListener("mouseover", function() {
+            box[0].style.backgroundColor = "red";
+        });
+    </script>
+</body>
+</html>
