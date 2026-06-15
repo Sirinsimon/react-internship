@@ -14,7 +14,7 @@
     </style>
 </head>
 <body>
-    <button id="box"></button>
+    <button id="box"> catch me</button>
 </body>
 <script>
     let max = 20
@@ -24,6 +24,13 @@
         console.log(Math.floor(Math.random()))
         box.style.marginTop = Math.floor(Math.random() * max)+"rem" 
     })
+
+    setTimeout(function() {
+        console.log("You cannot catch me!")
+        let message = document.createElement("p")
+        message.textContent = "You cannot catch me!"
+        document.body.appendChild(message)
+    }, 10000)
 
 </script>
 </html>

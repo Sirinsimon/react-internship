@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run Away Button</title>
+    <style>
+        #box{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="box">Catch Me</button>
+
+    <script>
+        let max = 20;
+        let box = document.getElementById("box");
+
+        box.addEventListener("mouseover", function () {
+
+            setTimeout(() => {
+                box.style.left = Math.floor(Math.random() * max) + "rem";
+                box.style.top = Math.floor(Math.random() * max) + "rem";
+            }, 500); 
+            
+
+        });
+    </script>
+
+</body>
+</html>
