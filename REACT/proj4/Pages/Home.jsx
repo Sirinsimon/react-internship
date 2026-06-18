@@ -43,11 +43,7 @@ function HomePage() {
                         <p className="hero-subtitle">
                             Discover premium products for your digital lifestyle
                         </p>
-                        <div className="hero-buttons">
-                            <Link to="/signup" className="hero-btn primary">
-                                Get Started
-                            </Link>
-                        </div>
+                       
                     </div>
                 </section>
 
@@ -115,13 +111,7 @@ function HomePage() {
 
                 {/* CTA Section */}
                 <section className="cta-section">
-                    <div className="cta-content">
-                        <h2>Ready to get started?</h2>
-                        <p>Join thousands of satisfied customers today</p>
-                        <Link to="/signup" className="cta-button">
-                            Create Account
-                        </Link>
-                    </div>
+                   
                 </section>
             </div>
         </>
