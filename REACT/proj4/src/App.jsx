@@ -1,25 +1,23 @@
 
-import { Routes, Route } from 'react-router-dom'
-import Nav from './Components/Nav'
-import Footer from './Components/Footer'
-import Home from './Pages/Home'
-import Login from './Pages/Login'
-import Signup from './Pages/Signup'
+import Navbar from '../components/nav.jsx'
+import Footer from '../components/footer.jsx'
+import LoginPage from '../Pages/Login.jsx'
+import SignupPage from '../Pages/Signup.jsx'
+import HomePage from '../Pages/Home.jsx'
+import {Routes,Route} from 'react-router-dom'
+
 
 function App() {
-  return (
-    <div className="app-layout">
-      <Nav />
-      <main className="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-      </main>
+  return(
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/login" element = {<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+      </Routes>
       <Footer />
-    </div>
+    </>
   )
 }
-
 export default App
