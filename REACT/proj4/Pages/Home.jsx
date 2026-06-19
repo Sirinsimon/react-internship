@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Audio } from 'react-loader-spinner';
 import './home.css';
 
 const API_URL = 'https://sample-e-1.onrender.com/product/getproducts';
@@ -56,7 +57,25 @@ function HomePage() {
                         </div>
 
                         {loading ? (
-                            <p className="section-header">Loading products...</p>
+                            <div
+                                className="section-header"
+                                style={{
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    padding: '2rem 0'
+                                }}
+                            >
+                                <Audio
+                                    height="80"
+                                    width="80"
+                                    color="#4fa94d"
+                                    ariaLabel="audio-loading"
+                                    wrapperStyle={{}}
+                                    wrapperClass="wrapper-class"
+                                    visible={true}
+                                />
+                            </div>
                         ) : error ? (
                             <p className="section-header">{error}</p>
                         ) : (

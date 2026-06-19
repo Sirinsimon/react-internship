@@ -1,38 +1,69 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios'
+import { ColorRing } from 'react-loader-spinner';
+import {z} from "zod";
+const loginSchema = z.object({
+    email: z
+        .string()
+        .trim()
+        .min(1, 'Email is required')
+        .email('Invalid email'),
+
+    password: z
+        .string()
+        .trim()
+        .min(1, 'Password is required')
+        .max(100, 'Password is too long'),
+});
 
 import './login.css';
-import Navbar from '../components/nav';
 
 function LoginPage() {
-    const [email,setEmail] = useState('');
-    const [password,setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
-    const [Error,setError] = useState('');
-    const [sucess,setSuccess] = useState('');
+    const [Error, setError] = useState('');
+    const [sucess, setSuccess] = useState('');
 
-    const handleLogin = async (e) =>{
-        setSuccess('')
-        setError('')
-        e.preventDefault('')
-        try{
-            const response  = await axios.post("https://sample-e-1.onrender.com/login",
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        setSuccess('');
+        setError('');
+        setLoading(true);
+
+        const result = loginSchema.safeParse({
+            email: email.trim(),
+            password: password.trim(),
+        });
+
+        if (!result.success) {
+            setError(result.error.issues[0]?.message || 'Validation failed');
+            setLoading(false);
+            return;
+        }
+
+        try {
+            const response = await axios.post(
+                'https://sample-e-1.onrender.com/login',
                 {
-                    email,
-                    password
+                    email: result.data.email,
+                    password: result.data.password,
                 }
             );
-            const {token} = response.data;
-            setSuccess("Login:sucessfull");
-            localStorage.setItem("token",token);
+            const { token } = response.data;
+            setSuccess('Login successful');
+            localStorage.setItem('token', token);
             navigate('/');
-            console.log(response)
-        }catch (err){
-            setError(err.response?.data?.message || "Login failed")
+            console.log(response);
+        } catch (err) {
+            setError(err.response?.data?.message || 'Login failed');
+        } finally {
+            setLoading(false);
         }
-    }
+    };
     
     return (
         <>
@@ -61,7 +92,8 @@ function LoginPage() {
                                     type="text"
                                     id="emailOrUsername"
                                     name="emailOrUsername"
-                                    onChange={(e)=> setEmail(e.target.value)}
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     placeholder="Enter your username or email"
                                     required
                                 />
@@ -73,7 +105,8 @@ function LoginPage() {
                                     type="password"
                                     id="password"
                                     name="password"
-                                    onChange={(e)=> setPassword(e.target.value)}
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
                                     placeholder="Enter your password"
                                     required
                                 />
@@ -89,8 +122,22 @@ function LoginPage() {
                                 </Link>
                             </div>
 
-                            <button type="submit" className="login-button">
-                                Sign In
+                            <button type="submit" className="login-button" disabled={loading}>
+                                {loading ? (
+                                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                        <ColorRing
+                                            visible={true}
+                                            height="30"
+                                            width="30"
+                                            ariaLabel="color-ring-loading"
+                                            wrapperStyle={{}}
+                                            wrapperClass="color-ring-wrapper"
+                                            colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+                                        />
+                                    </div>
+                                ) : (
+                                    'Sign In'
+                                )}
                             </button>
                         </form>
 
