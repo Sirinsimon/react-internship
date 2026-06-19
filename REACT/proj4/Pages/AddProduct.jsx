@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import './addproduct.css';
 
-const API_URL = 'https://sample-e-1.onrender.com/product/addproduct';
+ const API_URL =  'https://sample-e-1.onrender.com/product/addproduct'
 
 function AddProduct() {
     const [formData, setFormData] = useState({
